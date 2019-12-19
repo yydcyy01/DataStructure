@@ -1,0 +1,46 @@
+此文件是cn.yydcyy DataStructure 说明
+
+实现Array
+
+
+Stack接口    Array实现
+             LinkedList还没实现,待完成
+
+实现步骤 :
+完成 cn.yydcyy.array.Main 方法测试
+                     Array 自定义泛型数组编写
+                     Student类实现
+
+完成 cn.yydcyy.stack.Stack 接口制订
+                     ArrayStack 实现
+
+完成 cn.yydcyy.queue.Queue 接口制订
+                     ArrayQueue 实现
+                     LoopQueue 实现
+
+完成 cn.yydcyy.test.ArrayQueue VS LoopQueue 性能测试
+
+完成 cn.yydcyy.list.LinkedList
+                    LinkedListStack
+                    LinkedListQueue 头尾指针实现Queue
+
+完成 cn.yydcyy.test.ArrayQueue VS LoopQueue VS LinkedListQueue 性能测试
+
+
+完成 cn.yydcyy.recursive.Sum 递归Demo    链表 = 天然递归  LeetCode 203
+                         ShowRecursive 递归可视化Demo
+
+                    待实现 : 更多链表操作 : 双链表, 循环链表
+                    Java LinkedList 底层使用循环双向链表实现
+                    数组链表 [应用于 知道总个数, next变成下标值, 直接索引]
+
+
+完成 package cn.yydcyy.tree.binary_search_tree;
+
+
+增加 cn.yydcyy.map 定义 map 接口. 日后实现 cn.(BSTMap, LinkedListMap)   com.(AVLTree) 等
+
+完成 cn.yydcyy.hashtable
+hashtable1 实现基本功能. 有一个小缺陷  :
+hashtable2 在 1 基础上实现扩缩容
+hashtable3 在 1 2 基础上, 解决1 的缺陷, 优化 2 扩容后 2M 不是质数问题. 详情见 hashtable3 注解

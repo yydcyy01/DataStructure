@@ -1,0 +1,75 @@
+此文件说明是 com.yydcyy 排序说明    大白话讲明白过程,  使之适合自己复习, 不需要再来一遍
+
+完成 package com.yydcyy.Helper
+                              SortHelper.java  实现生成随机数, isSort(), Print()等通用方法实现
+完成 package com.yydcyy.sort
+                              SelectionSort.java 版本 v0.1 实现 Integer 排序.
+                                                      v0.2 实现 <T> 泛型排序
+                                                      v0.3 优化至依次循环选出 min / max 两个数, Time O(n ^ 2) 但循环次数比 v0.2 少一半
+
+完成 package com.yydcyy.sort.insertion;
+                             InsertionSort.java 先按定义实现插入排序 , 再基于插入排序特性, 减少交换次数, 实现 V 0.2版
+    package com.yydcyy.sort.selection
+                             SelectionSort 实现选择排序
+
+
+                             /**  *
+                                  * 插入排序和选择排序都有两层循环，外循环遍历整个数组，内循环稍有区别：
+                                  选择排序的内循环是遍历一组未排过序的数组，
+                                  插入排序的内循环是遍历一组已排过序的数组，
+
+                                  插入排序在插入的时候可以做交换操作，也可以不做交换。
+                                  改进插入排序算法可以使用二分法等，这里只探讨普通的插入排序。
+
+                                  * 算法	    最好情况	               最坏情况
+                                  选择排序	交换0次，比较n(n-1)/2次	  交换N次
+                                  插入排序	交换0次，比较N-1次	      交换n(n-1)/2次，比较n(n-1)/2次
+
+                                  一些教材，普遍说插入排序算法比选择排序要快，实际上从上面的分析可以看出，
+                                  其实二者的复杂度差不多，都是O(N平方)。代码实现测试中也证实了这一点。
+                                  */
+
+
+
+完成 package com.yydcyy.Helper
+                            InsVSSelTest 测试 InsertionSort  SelectionSort 实现正确性 及其效率对比
+
+完成 package com.yydcyy.merge
+                            MergeSort
+                                  实现归并排序, 并优化为: 元素个数小于 15 采用 InsertSort 的优化
+                                  注 : 表示 L R, 别用 l r,  这个 l 和 1 在 windows 中长得太像了, 两次自己认错, debug 找 1,2 天(可能那段时间也比较忙吧, 反正印象深刻
+                            MergeUPSort
+                                  自下而上实现
+
+完成 package com.yydcyy.quick    time  O(n log n)   space O( n )
+                            QuickSort
+                                  按快排定义实现, 测试 千万级别 数据 3-5 秒 (v0.1 v0.2 版本不同, 时间复杂度同, 但是单路 / 2 路快速排序对"稳定"处理不同, 慢但是几乎不会出现极度不平衡一致退化到 O(n^n) 复杂度的情况)
+                            Quick3WaysSort
+                                  对于处理 "稳定性", 2 路快速排序讲 partition v 数据随机放置左右防止不平衡.  而 3 路排序使用 lt gt 分割 [lt 左部为小于 v元素集合, lt gt 范围内为等于 v 集合, gt 右边为大于 v 集合], 然后分别在递归 sort(L,lt-1); sort(gt,R)
+
+
+完成 package com.yydcyy.bst
+                            <K,V>
+                            time O(nlogn) space O(1)  没有实现删除功能,
+                            BSTBasic.java 基本功能
+                            BST.java  二分搜索树核心算法是 find()方法实现, BST1 中, fin1() 为非递归实现, fin2() 为递归实现
+                            BST.java  实现二分搜索 大多功能, 可直接作为库调用
+                            TestBST.java   测试二分搜索 find()方法递归和非递归两种实现方式时间性能差别. 测试数据为 100W , 1000W 两组. 两台电脑测试, 结果在注释里
+
+完成 package com.yydcyy.unionfind
+
+
+完成 package com.yydcyy.graph.Graph
+                            DenseGraph 稠密图  SparseGraph 稀疏图  对外接口相同 :
+                            public DenseGraph( int n , boolean directed ){
+                            public SparseGraph(int n, boolean directed) { n 表示边数, directed 表示 是否为有向图. (实现中只有addEdge多了一次判断. directed = true ....)
+
+                            Components 实现 DFS 求连通分量.
+                            FindAPath   寻路算法 (图中寻找一条两点之间距离
+                                        结果 : 类似连通分量, FindAPath(G,s) s 只要属于同一个"连通分量" , 即该 from[i] 都可被赋值为上一个
+                                        得到 from[] 路径, 即可得到该路径所有"结果" , 比如打印 / 路径上某点节点是否可达等
+
+完成 com.yydcyy.heap     实现是有先后顺序的, 后者依赖前者
+                        MaxHeapIni 定义堆基本功能
+                        MaxHeap_ShiftDown 实现基本功能, 且主要完成了 shiftDown / shiftUp 两个方法.  但我现在有点蒙, 不明白他俩使用可以互相替换还是说 insert / 取出两个方法一起使用.
+                        HeapSort 实现传入一个最大/小堆化的数组后, 完成原地数组自然排序. (不需要额外空间)
