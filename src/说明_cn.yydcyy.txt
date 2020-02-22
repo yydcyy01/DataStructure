@@ -44,3 +44,6 @@ Stack接口    Array实现
 hashtable1 实现基本功能. 有一个小缺陷  :
 hashtable2 在 1 基础上实现扩缩容
 hashtable3 在 1 2 基础上, 解决1 的缺陷, 优化 2 扩容后 2M 不是质数问题. 详情见 hashtable3 注解
+
+cn.yydcyy.tree.trie.Trie
+    Trie 实现 insert / search 业务逻辑功能.
